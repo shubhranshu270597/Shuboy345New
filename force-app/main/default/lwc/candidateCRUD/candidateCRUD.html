@@ -1,0 +1,19 @@
+<!--
+  @File Name          : candidateCRUD.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 10/16/2019, 7:17:52 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    10/16/2019   shubhranshu     Initial Version
+-->
+<template>
+    <lightning-card title="Candidate Form" icon-name="custom:custom12">
+        <lightning-input label="Id" disabled value={candidateId}></lightning-input>
+        <lightning-input label="Candidate First Name" name="firstname" onchange={handleNameChange} class="slds-m-bottom_x-small"></lightning-input>
+        <lightning-input label="Candidate Last Name" name="lastname" onchange={handleNameChange} class="slds-m-bottom_x-small"></lightning-input>
+        <lightning-button label="Submit" variant="success" onclick={createCandidate}></lightning-button>
+    </lightning-card> 
+</template>

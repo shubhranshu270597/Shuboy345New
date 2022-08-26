@@ -1,0 +1,36 @@
+<!--
+  @File Name          : NewsPanda.page
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 6/2/2020, 5:41:50 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    23/1/2020   shubhranshu     Initial Version
+-->
+<apex:page lightningStylesheets="true" standardStylesheets="false" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<apex:includeLightning />
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>News Panda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <div id="lightning"></div>
+    <script>
+        $Lightning.use("c:NewsAPP" , function(){
+            $Lightning.createComponent("c:newsPanda" ,{
+            },
+            "lightning",
+            function (cmp) {
+                console.log('News Panda Loaded');
+                
+            });
+        });
+    </script>
+</body>
+</html>
+</apex:page>

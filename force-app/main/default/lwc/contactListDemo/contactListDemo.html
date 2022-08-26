@@ -1,0 +1,69 @@
+<!--
+  @Component Name     : contactListDemo.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 25/8/2019, 1:24:25 AM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/8/2019, 12:29:54 PM   shubhranshu     Initial Version
+-->
+<template>
+    <!-- <lightning-card title="Contact List" icon-name="standard:contact">
+      <lightning-layout vertical-align="center">
+        <lightning-layout-item padding="around-small">
+            <lightning-input label="Find Contact" value={searchKey} onchange={findContact}></lightning-input>
+        </lightning-layout-item>
+      </lightning-layout>
+      <lightning-layout vertical-align="center">
+         <template for:each={contacts} for:item="contact">
+            <lightning-layout-item key={contact.key}>
+                <lightning-formatted-text value={contact.Name} ></lightning-formatted-text>
+                <lightning-formatted-email value={contact.Email} ></lightning-formatted-email>
+                <lightning-formatted-phone value={contact.Phone} ></lightning-formatted-phone>
+            </lightning-layout-item>
+        </template>
+      </lightning-layout>
+    </lightning-card> -->
+
+  <lightning-card title="Account List" icon-name="standard:account">
+    <lightning-layout>
+      <lightning-layout-item padding="around-small">
+        <template if:true={selectedAccount}>
+          <p>{selectedAccount.Name}</p>
+          <p>{selectedAccount.Phone}</p>
+          <p>{selectedAccount.Industry}</p>
+        </template>
+      </lightning-layout-item>
+    </lightning-layout>
+      <lightning-layout vertical-align="center">
+        <lightning-layout-item padding="around-small">
+            <lightning-input label="Find Account" value={searchKeyAcc} onchange={lstAccount}></lightning-input>
+        </lightning-layout-item>
+      </lightning-layout>
+      <lightning-layout vertical-align="center">
+        <lightning-layout-item padding="around-small">
+          <lightning-button label="Search" variant="success" onclick={findAccount}>
+
+          </lightning-button>
+        </lightning-layout-item>
+      </lightning-layout>
+      <lightning-layout vertical-align="center">
+         <template for:each={accounts} for:item="account">
+           <c-account-tiltle key={account.Id} onselect={handleSelectRec} account={account}></c-account-tiltle> 
+            <!-- <lightning-layout-item key={account.key}>
+                <lightning-formatted-text value={account.Name} ></lightning-formatted-text>
+                <lightning-formatted-email value={account.Email} ></lightning-formatted-email>
+                <lightning-formatted-phone value={account.Industry} ></lightning-formatted-phone>
+            </lightning-layout-item> -->
+        </template>
+        
+        <!-- <lightning-layout-item padding="around-small">
+          <c-account-tiltle ></c-account-tiltle>
+        </lightning-layout-item> -->
+      </lightning-layout>
+    </lightning-card>
+</template>

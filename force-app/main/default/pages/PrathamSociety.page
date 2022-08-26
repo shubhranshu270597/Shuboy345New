@@ -1,0 +1,197 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" doctype="html-5.0" controller="PrathamResidencyController"> 
+      <apex:include pageName="IndexPages"/>
+        <nav class="navbar navbar-default fixed-top" style="background: transparent;border: none;">
+            <div class="container-fluid">
+               <div class="navbar-header" >
+                   <a class="navbar-brand" href="#"><font color="Black" style="font-size: 30px;">Pratham Residency</font></a>
+                </div>
+            </div>
+        </nav>
+        <br /><br />
+        <div class="conatiner" style="background-color:;">
+            <apex:pageMessages id="error"/>
+              <apex:form >
+               <div class="row">
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                         Flat No:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control" value="{!ps.Flat_Number__c}" required="true" type="text" html-placeholder="Enter Flat Number"/>
+                    </div>
+                  </div>
+                 </div>
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                         Name of Member:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control" value="{!ps.Name_of_Member__c}" required="true" type="text" html-placeholder="Enter Name of member"/>
+                    </div>
+                 </div>
+                </div>
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                         Service Charge:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control price" value="{!ps.Service_Charge__c}" required="true" id="q1" type="text"  html-placeholder="Enter Service charge"/>
+                    </div>
+                 </div>
+                </div>
+                </div>
+               <div class="row">
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                         Sinking Fund:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control price" value="{!ps.Sinking_Fund__c}"  required="true" id="q2" type="text"  html-placeholder="Enter Sinking fund"/>
+                    </div>
+                 </div>                 
+                </div>
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                        Repair Fund:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control price" value="{!ps.Repair_fund__c}"  required="true" id="q3" type="text"  html-placeholder="Enter Repair fund"/>
+                    </div>
+                 </div>
+                 </div>
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                        Cidco Service Charge:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control price" value="{!ps.Cidco_Service_Charge__c}" required="true" id="q4" type="text"  html-placeholder="Cidco Service Charge"/>
+                    </div>
+                 </div>                 
+                </div>
+                </div>
+                <div class="row"> 
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                         Cultural Fund:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control price" value="{!ps.Cultural_Fund__c}" required="true" id="q5" type="text"  html-placeholder="Enter Cultural Fund"/>
+                    </div>
+                 </div>
+                 </div>
+                 <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                         Insurance  Premium:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control price" value="{!ps.Insurance_Premium__c}" required="true" id="q6" type="text"  html-placeholder="Enter Insurance Premium"/>
+                    </div>
+                 </div>
+                 </div>
+                 <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                         Parking Charge:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control price" value="{!ps.Parking_Charge__c}" required="true" id="q7" type="text"  html-placeholder="Enter Parking Charge"/>
+                    </div>
+                 </div>    
+                </div>
+               </div>
+               <div class="row">
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                        Non Occupancy Charge:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control price" value="{!ps.Non_Occupancy_Charge__c}" required="true" id="q8" type="text"  html-placeholder="Enter Non Occupancy Charge"/>
+                    </div>
+                 </div>
+                </div>
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                        Quaterley Amount:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control price" value="{!ps.Quaterley_Amount__c}"  html-placeholder="Enter Quaterley Amount" required="true" type="text"/>
+                    </div>
+                 </div>    
+                </div>
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                         Interest / Fine:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control price" value="{!ps.Interest_Fine__c}"  id="q9" type="text"  html-placeholder="Enter Interest/Fine(if any)"/>
+                    </div>
+                 </div>
+                 </div>
+                 </div>
+               <div class="row">
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                         Last Month Areas:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control price" value="{!ps.Last_Month_Areas__c}"  id="q10" type="text"  html-placeholder="Enter Last Month Areas(if any)"/>
+                    </div>
+                 </div> 
+                </div>
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                         Total Amount:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control" value="{!ps.Total_Amount__c}" required="true" type="text" html-placeholder="Total Amount" id="result1" />
+                    </div>
+                 </div>
+                </div>
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label for="input" class="col-lg-4 control-label">
+                         Received Amount:</label>
+                    <div class="col-lg-8">
+                        <apex:inputField styleClass="form-control" value="{!ps.Received_Amount__c}" required="true" type="text" id="result2" html-placeholder="Received Amount"/>
+                    </div>
+                 </div>  
+                 </div>  
+                 </div>
+                 <br /><br />
+                 <div class="form-group">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <apex:commandButton value="SaveDetails" styleClass="btn btn-success" action="{!saveAllDetails}"/>
+                            &nbsp;
+                            <button type="reset" class="btn btn-danger">Cancel</button>
+                       
+                        </div>
+                 </div>
+              </apex:form>
+        </div>
+      <script type="text/javascript">
+       $(document).ready(function(){
+           
+          $('.price').change(function() {
+                calculateSum();
+                
+            });
+           
+            });
+           
+           function calculateSum() {
+            
+            var sum = 0;
+            //iterate through each td based on class and add the values
+                $(".price").each(function() {
+            
+                    //add only if the value is number
+                    if(!isNaN(this.value) && this.value.length!=0) {
+                        sum += parseFloat(this.value);
+                    }
+                    
+                });       
+                $('[id$=result1]').val(sum);                   
+                $('[id$=result2]').val(sum);                    
+            }
+        </script>
+        
+</apex:page>

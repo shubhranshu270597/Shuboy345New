@@ -1,0 +1,29 @@
+<!--
+  @Page Name          : lwcVfTest.page
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 10-20-2021
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author                 Modification
+  ==============================================================================
+  1.0    25/8/2019, 2:05:25 AM   shubhranshu     Initial Version
+-->
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false">
+    <apex:includeLightning />
+    <div id="lightning"></div>
+    <script>
+        $Lightning.use("c:LightningApplication" , function(){
+            $Lightning.createComponent("c:testLwcMasterComponent" ,{
+                greeting : "LWC test inside Vf page"
+            },
+            "lightning",
+            function (cmp) {
+                console.log('component created successfully ...');
+                
+            });
+        });
+    </script>
+</apex:page>

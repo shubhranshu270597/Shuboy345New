@@ -1,0 +1,57 @@
+<!--
+  @File Name          : loadRecord.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 9/10/2019, 3:08:13 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    9/10/2019   shubhranshu     Initial Version
+-->
+
+ <!-- lightning-record-form example  -->
+<!-- <template>
+    <lightning-record-form
+        record-id={recordId}
+        object-api-name="Account"
+        layout-type="Compact"
+        mode="view">
+    </lightning-record-form>
+</template>  -->
+
+<!-- lightning-record-view-form example  -->
+<!-- <template>
+  <lightning-record-view-form
+              record-id={recordId}
+              object-api-name="Account">
+      <div class="slds-grid">
+          <div class="slds-col slds-size_1-of-2">
+              <lightning-output-field field-name="Name"></lightning-output-field>
+              <lightning-output-field field-name="Phone"></lightning-output-field>
+          </div>
+          <div class="slds-col slds-size_1-of-2">
+              <lightning-output-field field-name="Industry"></lightning-output-field>
+              <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+          </div>
+      </div>
+  </lightning-record-view-form>
+</template> -->
+
+<!-- Display Record Data in a Custom User Interface Using getRecord -->
+<template>
+  <lightning-record-view-form
+          record-id={recordId}
+          object-api-name={accountObject}>
+      <div class="slds-grid">
+          <div class="slds-col slds-size_1-of-2">
+              <!-- Other record data here -->
+          </div>
+          <div class="slds-col slds-size_1-of-2">
+              <lightning-formatted-text value={nameValue}
+                  class="slds-text-heading_large">
+              </lightning-formatted-text>
+          </div>
+      </div>
+  </lightning-record-view-form>
+</template>

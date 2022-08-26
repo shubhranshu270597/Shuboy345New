@@ -1,0 +1,73 @@
+<!--------------------------------------------Sample example for Map---------------------------------------------------------------------->
+Map<Integer,String> testmap=new Map<Integer,String>();
+
+testmap.put(1,'abc');
+testmap.put(2,'cde');
+testmap.put(3,'efg');
+testmap.put(4,'ghi');
+
+String a=testmap.get(1);
+String b=testmap.get(3);
+
+//System.debug('a-->'+a);
+//System.debug('b-->'+b);
+
+Set<Integer> key=testmap.keyset();
+List<String> values=testmap.values();
+
+System.debug('key-->'+key);
+System.debug('values-->'+values);
+<!----------------------------------------------------get all the key from map---------------------------------------------------------------->
+List<Pratham_Society_Bill_Generation__c> lst=[select Id,Flat_Number__c from Pratham_Society_Bill_Generation__c];
+
+Map<Id,String> mapForpbg=new Map<Id,String>();
+   if(lst.size()>0){
+        for(Pratham_Society_Bill_Generation__c pbg: lst){
+             
+           mapForpbg.put(pbg.Id,pbg.Flat_Number__c);
+        }
+    }
+    System.debug('mapForpbg-->'+mapForpbg);
+    Set<Id> setofpbg=mapForpbg.keySet();
+  //System.debug('setofpbg-->'+setofpbg);
+
+	for ( ID pbgID : mapForpbg.keySet() ){
+		system.debug(loggingLevel.debug, mapForpbg.get(pbgID));
+    }  
+
+<!---------------------------------------putAll Method--------------------------------------------------------------------------->
+    
+    
+    
+    Map<String,String> map1=new Map<String,String>();
+    map1.put('add','2n4');
+    map1.put('sub','4n2');
+    map1.put('mul','2n4');
+    map1.put('div','4n2');
+    List<String> val1=map1.values();
+    System.debug('val1-->'+val1); 
+    Map<String,String> map2=new Map<String,String>();
+    map2.putAll(map1);
+    List<String> val2=map2.values();
+    System.debug('val2-->'+val2); 
+
+<!---------------------------------------for remove and get all values function in map------------------------------------------------------------------------->
+    
+    Map<String,String> map1=new Map<String,String>();
+    map1.put('task1','code');
+    map1.put('task2','test');
+    map1.put('task3','deploy');
+    
+   for(String mapid:map1.keySet()){
+      
+      map1.remove('task3');
+    }
+    
+   List<String> str=map1.values();
+   System.debug('str-->'+str);
+
+<!---------------------------------------to get the sObject Type from map------------------------------------------------------------------------->
+    Map <id,Pratham_Society_Bill_Generation__c> acctMap = new map<id,Pratham_Society_Bill_Generation__c>([select Id,Flat_Number__c from Pratham_Society_Bill_Generation__c]);
+	for(string accValue:acctmap.keyset()){
+		system.debug(acctmap.get(accValue));
+	}

@@ -1,0 +1,25 @@
+<!--
+  @File Name          : LeadCrud.page
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 9/6/2019, 4:14:10 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    9/6/2019   shubhranshu     Initial Version
+-->
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false">
+    <apex:includeLightning />
+    <div id="lightning"></div>
+    <script>
+        $Lightning.use("c:LeadCrudAPP" , function(){
+            $Lightning.createComponent("c:LeadCrudOperation" ,{},
+            "lightning",
+            function (cmp) {
+                console.log('component created successfully ...');
+                
+            });
+        });
+    </script>
+</apex:page>

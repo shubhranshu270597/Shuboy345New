@@ -1,0 +1,34 @@
+<!--
+  @Component Name     : accountCrudOperation.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 8/28/2019, 2:55:25 PM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/28/2019, 2:50:18 PM   shubhranshu     Initial Version
+-->
+<template>
+    <lightning-card title="Account Flows" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+                <!-- <p>Account, {accName}!</p> -->
+            <lightning-input label="Name" value={accName} onchange={handleChange}>
+            </lightning-input>
+            <lightning-input label="Industry" value={industry} onchange={handleChange2}>
+            </lightning-input>
+            <lightning-input label="Account Number" value={accNumber} onchange={handleChange3}>
+            </lightning-input>
+            <lightning-input label="Phone" value={phone} onchange={handleChange4}>
+            </lightning-input>
+            <lightning-input label="Website Name" value={website} onchange={handleChange5}>
+            </lightning-input>
+            <br />
+            <lightning-button variant="brand" label="Save" title="Save" icon-name="utility:save" onclick={createAccountLwc} class="slds-m-left_medium">
+            </lightning-button>
+           
+        </div>
+    </lightning-card>
+</template>

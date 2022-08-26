@@ -1,0 +1,89 @@
+<!--
+  @File Name          : editRecord.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 9/16/2019, 6:29:00 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    9/10/2019   shubhranshu     Initial Version
+-->
+<!-- lightning-record-form example  -->
+<!-- <template>
+    <lightning-record-form
+        record-id={recordId}
+        object-api-name={objectApiName}
+        columns="2"
+        mode="edit"
+        layout-type="Compact">
+    </lightning-record-form>
+</template> -->
+
+<!-- Edit a Record with Specific Fields Using lightning-record-form -->
+
+<!-- <template>
+    <lightning-record-form
+        object-api-name={objectApiName}
+        record-id={recordId}
+        fields={fields}></lightning-record-form>
+</template> -->
+
+<!-- Edit a Record with a Custom Layout Using lightning-record-edit-form -->
+
+<!-- <template>
+    <lightning-record-edit-form
+        object-api-name={objectApiName}
+        record-id={recordId}>
+    <lightning-messages></lightning-messages>
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-input-field field-name="Name"></lightning-input-field>
+            <lightning-input-field field-name="Title"></lightning-input-field>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-input-field field-name="Phone"></lightning-input-field>
+            <lightning-input-field field-name="Email"></lightning-input-field>
+        </div>
+    </div>
+    <div class="slds-m-top_medium">
+        <lightning-button type="submit" variant="brand" label="Edit Contact"></lightning-button>
+    </div>
+    </lightning-record-edit-form>
+</template> -->
+
+<!-- Reset the Form to the Original Field Values -->
+
+<!-- <template>
+    <lightning-record-edit-form 
+        record-id={recordId}
+        object-api-name="Contact">
+            <lightning-messages></lightning-messages>
+            <lightning-input-field field-name="FirstName"></lightning-input-field>
+            <lightning-input-field field-name="LastName"></lightning-input-field>
+            <lightning-input-field field-name="Email"></lightning-input-field> 
+            <lightning-input-field field-name="Phone"></lightning-input-field> 
+            <div class="slds-align_absolute-center slds-p-around_medium">
+                <lightning-button class="slds-m-around_xx-small" label="Cancel" onclick={handleReset}></lightning-button>
+                <lightning-button class="slds-m-around_xx-small" label="Create Contact" type="submit" variant="brand" ></lightning-button>
+            </div>
+    </lightning-record-edit-form>
+</template> -->
+
+<!-- Override Default Behaviors Using Custom Events -->
+
+<template>
+    <lightning-record-edit-form
+            record-id={recordId} 
+            object-api-name="Contact"
+            onerror={handleError}>
+            <!--lightning-messages not needed here
+                since we’re displaying a toast with the error message -->
+            <!--<lightning-messages></lightning-messages>-->
+            <lightning-input-field field-name="FirstName"></lightning-input-field>
+            <lightning-input-field field-name="LastName"></lightning-input-field>
+            <lightning-input-field field-name="Email"></lightning-input-field> 
+            <lightning-input-field field-name="Phone"></lightning-input-field> 
+            <lightning-button type="submit" variant="brand" label="Create Contact"></lightning-button>    
+        </lightning-record-edit-form>
+</template>

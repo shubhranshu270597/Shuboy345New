@@ -1,0 +1,63 @@
+<!--
+  @File Name          : reimbursementList.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 29/12/2019, 7:27:34 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    25/12/2019   shubhranshu     Initial Version
+-->
+<template>
+    <article class="slds-card slds-m-top_none">
+        <div class="slds-card__header slds-grid"></div>
+            <div class="slds-card__body slds-card__body_inner">
+                <div class="slds-grid slds-wrap slds-form-element">
+                    <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-1 slds-p-around_x-small" 
+                        title="Reimbursement Name">
+                        <b><label>Reimbursement Name: </label></b>
+                        <p>
+                            <lightning-formatted-text value={reimbursement.Reimbursement_name__c}></lightning-formatted-text>
+                        </p>
+                    </div>
+                    <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-1 slds-p-around_x-small"
+                        title="Amount">
+                        <b><label>Amount: </label></b>
+                        <p>
+                            <lightning-formatted-number value={reimbursement.Amount__c}></lightning-formatted-number>
+                        </p>
+                    </div>
+                    <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-1 slds-p-around_x-small"
+                        title="Reimbursement Type">
+                        <b><label>Reimbursement Type: </label></b>
+                        <p>
+                            <lightning-formatted-text value={reimbursement.Reimbursement_type__c}></lightning-formatted-text>
+                        </p>
+                    </div>
+                    <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-1 slds-p-around_x-small"
+                        title="Other Type" if:true={reimbursement.Other_Type__c}>
+                        <b><label>Other Type: </label></b>
+                        <p>
+                            <lightning-formatted-text value={reimbursement.Other_Type__c}></lightning-formatted-text>
+                        </p>
+                    </div>
+                    <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-1 slds-p-around_x-small"
+                        title="Description">
+                        <b><label>Description: </label></b>
+                        <p>
+                            <lightning-formatted-text value={reimbursement.Description__c}></lightning-formatted-text>
+                        </p>
+                    </div>
+                    <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-1 slds-p-around_x-small"
+                        title="Requested By">
+                        <b><label>Requested By: </label></b>
+                        <p>
+                            <lightning-formatted-text value={reimbursement.Reimbursement_requested_by__c}></lightning-formatted-text>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </article>
+    <br />
+</template>

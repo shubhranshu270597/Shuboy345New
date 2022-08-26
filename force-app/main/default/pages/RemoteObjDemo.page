@@ -1,0 +1,48 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" showChat="false">
+    
+    <!-- Remote Objects definition to set accessible sObjects and fields -->
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="Candidate__c" jsShorthand="candidate" 
+            fields="Name,Id">
+            <apex:remoteObjectField name="Phone__c" jsShorthand="Phone"/>
+        </apex:remoteObjectModel>
+    </apex:remoteObjects>
+
+    <!-- JavaScript to make Remote Objects calls -->
+    <script>
+        var candidates = function(){
+            // Create a new Remote Object
+            var wh = new SObjectModel.candidate();
+            
+            // Use the Remote Object to query for 10 candidates records
+            wh.retrieve({ limit: 10 }, function(err, records, event){
+                if(err) {
+                    alert(err.message);
+                }
+                else {
+                    var ul = document.getElementById("candidateList");
+                    records.forEach(function(record) {
+                        // Build the text for a candidates 
+                        var whText = record.get("Name");
+                        whText += " -- ";
+                        whText += record.get("Phone");
+                        
+                        // Add the line item to the candidates list
+                        var li = document.createElement("li");
+                        li.appendChild(document.createTextNode(whText));
+                        ul.appendChild(li);
+                    });
+                }
+            });
+        };
+    </script>
+
+    <h1>Retrieve candidates via Remote Objects</h1>
+
+    <p>Candidates:</p>
+
+    <ul id="candidateList">
+    </ul>
+    <button onclick="candidates ()">Retrieve candidates</button>
+
+</apex:page>

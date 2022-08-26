@@ -1,0 +1,237 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" doctype="html-5.0" controller="TotalBillSummaryController">
+    <apex:include pageName="IndexPages"/>
+    <apex:stylesheet value="{!$Resource.PrathamCSS}"/>
+     <div style="width:100%; margin:5px auto;font:Normal 16px/30px Helvetica Narrow, sans-serif;" id="docx">
+         <!-- <apex:outputText value="Date: {0,date,dd-MM-yyyy}" style="float:right; margin-right:50px;">
+              <apex:param value="{!TODAY()}" />
+         </apex:outputText> -->
+         <div class="container">
+           <center><h2><b>Pratham Residency Co-operative Housing Society Ltd.</b></h2>
+              <p>Registration number: NBOM/ CIDCO/HSG/(TC)4089/JTR/ 2011-12</p>
+              <p>Plot no 234, Sector 21, Kamothe , Navi Mumbai 410209</p></center>
+         </div>
+         <br />
+       
+         <div class="container">
+              <div class="search-container">
+                <apex:form >
+                <!--  <input type="text" placeholder="Enter Flat Nuumber" value="{!flatNumber}"/>&nbsp;&nbsp; -->
+                  <apex:inputText html-placeholder="Enter Flat Nuumber" value="{!flatNumber}"/>&nbsp;&nbsp;
+                  <apex:commandButton styleClass="btn btn-info"  value="Search Bill" action="{!searchBillData}"/>
+                </apex:form>
+              </div>
+         </div>
+        
+        <br />
+         <div class="container">
+           <div class="row">
+             <div class="col-sm-6">
+                <p>Biil No:- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!psbg.Bill_Number__c}</p>
+             </div>
+             <div class="col-sm-6">
+               <apex:outputText value="Biil Date:- {0,date,dd-MM-yyyy}">
+              <apex:param value="{!psbg.createddate}" />
+              </apex:outputText>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-sm-6">
+               <p>Flat No: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!psbg.Flat_Number__c}</p>
+             </div>
+             <div class="col-sm-6">
+                <p>Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!psbg.Name_of_Member__c}</p>
+             </div>
+           </div>
+          </div>
+        
+        <div class="container"> 
+          <div class="table-responsive table-bordered">          
+              <table class="table" id="billTable">
+                <thead>
+                  <tr>
+                    <th>Sr. No.</th>
+                    <th>Particular</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                   <td>1.</td>
+                   <td>Service Charges </td>
+                   <td>{!psbg.Service_Charge__c}</td>
+                  </tr>
+                  <tr>
+                   <td>2.</td>
+                   <td>Sinking Fund</td>
+                   <td>{!psbg.Sinking_Fund__c}</td>
+                  </tr>
+                  <tr>
+                   <td>3.</td>
+                   <td>Repair Fund</td>
+                   <td>{!psbg.Repair_fund__c}</td>
+                  </tr>
+                  <tr>
+                   <td>4.</td>
+                   <td>CIDCO Service Charges </td>
+                   <td>{!psbg.Cidco_Service_Charge__c}</td>
+                  </tr>
+                  <tr>
+                   <td>5.</td>
+                   <td>Cultural Fund </td>
+                   <td>{!psbg.Cultural_Fund__c}</td>
+                  </tr>
+                  <tr>
+                   <td>6.</td>
+                   <td>Insurance Premium </td>
+                   <td>{!psbg.Insurance_Premium__c}</td>
+                  </tr>
+                    <tr>
+                   <td>7.</td>
+                   <td>Parking charges 4W / 2W</td>
+                   <td>{!psbg.Parking_Charge__c}</td>
+                  </tr>
+                  <tr>
+                   <td>8.</td>
+                   <td>Non - Occupancy charges </td>
+                   <td>{!psbg.Non_Occupancy_Charge__c}</td>
+                  </tr>
+                  <tr>
+                   <td>9.</td>
+                   <td>Cheque Return charges</td>
+                   <td>_____________</td>
+                  </tr>
+                  <tr>
+                   <td>10.</td>
+                   <td>Interest / Fine </td>
+                   <td>{!psbg.Interest_Fine__c}</td>
+                  </tr>
+                  <tr>
+                   <td>11.</td>
+                   <td>Entrance fee / Transfer Premium </td>
+                   <td>_________________</td>
+                  </tr>
+                  <tr>
+                   <td>12.</td>
+                   <td>Miscellaneous Charges</td>
+                   <td>__________________</td>
+                  </tr>
+                  <tr>
+                   <td>13.</td>
+                   <td>Others</td>
+                   <td>__________________</td>
+                  </tr>
+                  <tr>
+                   <td></td>
+                   <td>Total Bill due for this month</td>
+                   <td>{!psbg.Total_Amount__c}</td>
+                  </tr>
+                   <tr>
+                   <td></td>
+                   <td>Add: Arrears / Outstanding as per last month </td>
+                   <td></td>
+                  </tr>
+                  <tr>
+                   <td></td>
+                   <td>Less adjustment </td>
+                   <td></td>
+                  </tr>
+                  <tr>
+                   <td></td>
+                   <td>Total outstanding dues </td>
+                   <td></td>
+                  </tr>
+                  <tr>
+                   <td></td>
+                   <td>__________</td>
+                   <td>__________</td>
+                  </tr>
+                  <tr>
+                   <td></td>
+                   <td>__________</td>
+                   <td>__________</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div> 
+        
+        <div class="container">
+          <p>Note : Maintenance charges Should be paid by 15th of every month failing which attract 21% interest p.a. or Rs 50 P.M. which ever is higher Payment should be make by cheque only Complains must be given in writing Help us to keep our society clean and green.</p>
+         </div>  <br /> <br />
+         <div style="float:right; margin-right:50px;">
+           <p> Secretary / Chairman/Treasurer </p>
+         </div>
+         <div class="container">
+          <apex:form >
+          <div class="form-group">
+            <div class="col-lg-8 col-lg-offset-2">
+                <apex:outputPanel rendered="{!billId !=null && billId !=''}">
+                   <apex:commandButton value="Approved" styleClass="btn btn-primary" action="{!BillReceipt}"/>
+                </apex:outputPanel>&nbsp;&nbsp;
+                <apex:outputPanel rendered="{!flatNumber !=null && flatNumber !=''}">
+                    <apex:commandButton value="Final Approved" styleClass="btn btn-success" action="{!FinalBillReceipt}"/>
+                </apex:outputPanel>
+                <button type="reset" class="btn btn-danger">Cancel</button>
+                <!--
+                <button class="btn btn-warning" id="export">Export To Word</button>
+                <button class="btn btn-info" id="export1">Export Table Data To Excel</button>
+                -->
+            </div>
+          </div>  
+          </apex:form>
+         </div>
+    </div>
+    <script src="https://cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+           $('[id$=export1]').click(function(){
+            $("#billTable").table2excel({
+                filename: "TotalBillSummary.xls"
+            });
+          });
+        });
+    </script>
+    <script type="text/javascript">
+          /* HTML to Microsoft Word Export Demo 
+      * This code demonstrates how to export an html element to Microsoft Word
+      * with CSS styles to set page orientation and paper size.
+      * Tested with Word 2010, 2013 and FireFox, Chrome, Opera, IE10-11
+      * Fails in legacy browsers (IE<10) that lack window.Blob object
+      */
+     window.export.onclick = function() {
+     
+       if (!window.Blob) {
+          alert('Your legacy browser does not support this action.');
+          return;
+       }
+    
+       var html, link, blob, url, css;
+       
+       // EU A4 use: size: 841.95pt 595.35pt;
+       // US Letter use: size:11.0in 8.5in;
+       
+       css = (
+         '<style>' +
+         '@page WordSection1{size: 841.95pt 595.35pt;mso-page-orientation: landscape;}' +
+         'div.WordSection1 {page: WordSection1;}' +
+         'table{border-collapse:collapse;}td{border:1px gray solid;width:5em;padding:2px;}'+
+         '</style>'
+       );
+       
+       html = window.docx.innerHTML;
+       blob = new Blob(['\ufeff', css + html], {
+         type: 'application/msword'
+       });
+       url = URL.createObjectURL(blob);
+       link = document.createElement('A');
+       link.href = url;
+       // Set default file name. 
+       // Word will append file extension - do not add an extension here.
+       link.download = 'TotalBillSummary';   
+       document.body.appendChild(link);
+       if (navigator.msSaveOrOpenBlob ) navigator.msSaveOrOpenBlob( blob, 'TotalBillSummary.doc'); // IE10-11
+            else link.click();  // other browsers
+       document.body.removeChild(link);
+     };
+    </script>
+</apex:page>

@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Contact List" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <c-aysnc promise={contactPrmoise}>
+                <div slot="onFulfilled">
+                    <template if:true={contacts}>
+                        <template for:each={contacts} for:item="con">
+                            <p key={con.Id}>{con.Name}</p>
+                        </template>
+                    </template>
+                </div>
+                <div slot="onRejected">
+                    <P>Error occure while retrieving the contacts</P>
+                </div>
+                <div slot="onPending">
+                    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                </div>
+            </c-aysnc>
+        </div>
+    </lightning-card>
+</template>

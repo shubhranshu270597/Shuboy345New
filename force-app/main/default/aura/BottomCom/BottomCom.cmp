@@ -1,0 +1,14 @@
+<!--
+  @description       : 
+  @author            : shubhranshu
+  @group             : 
+  @last modified on  : 05-11-2021
+  @last modified by  : shubhranshu
+  Modifications Log 
+  Ver   Date         Author        Modification
+  1.0   05-11-2021   shubhranshu   Initial Version
+-->
+<aura:component >
+    <aura:registerEvent name="sampleCmpEvent" type="c:WelcomeEvent" />
+    <lightning:button label="Click to fire the event" variant="brand" onclick="{!c.childComponentEvent}"/>
+</aura:component>

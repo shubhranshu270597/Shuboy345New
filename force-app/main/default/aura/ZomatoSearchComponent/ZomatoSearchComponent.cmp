@@ -1,0 +1,15 @@
+<!--
+  @File Name          : ZomatoSearchComponent.cmp
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 10/10/2019, 2:40:28 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    10/10/2019   shubhranshu     Initial Version
+-->
+<aura:component>
+    <c:zomato></c:zomato>
+    <c:zomatoDisplayRestaurants></c:zomatoDisplayRestaurants>
+</aura:component>

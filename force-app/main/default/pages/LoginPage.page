@@ -1,0 +1,49 @@
+<apex:page doctype="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" controller="StudnetLoginController">
+    <apex:include pageName="StudentPortalFilesPage"/>
+    <apex:stylesheet value="{!URLFOR($Resource.StudentPortalCSSandJS,'/assets/css/login.css')}"/>
+    
+    
+    <body>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" >
+                <br /><br /><br />
+            <div class="login">
+      <div class="login-triangle"></div>
+       <apex:pageMessages id="error"/>
+      <h2 class="login-header">Login</h2>
+       <div class="login-container">
+         <apex:form >
+           <center><p><apex:inputField value="{!ld.Email}" type="email" html-placeholder="Email"/></p></center> 
+                      
+            <center><p><apex:inputSecret value="{!ld.Password__c}" html-placeholder="Password"/></p></center>
+              <center><p>
+                    <apex:commandButton value="Login"  styleClass="button" action="{!Login}"/>
+              </p></center>
+         </apex:form>
+      </div>
+    </div>
+            
+            </div>
+        <div class="col-md-4"></div>
+        
+        </div>
+        </div>
+        
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5bf2704d79ed6453ccaa0775/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+   </body>
+    
+</apex:page>

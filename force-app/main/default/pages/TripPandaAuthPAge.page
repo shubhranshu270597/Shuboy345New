@@ -1,0 +1,77 @@
+<!--
+  @File Name          : TripPandaAuthPAge.page
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 5/12/2019, 5:15:51 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    5/12/2019   shubhranshu     Initial Version
+-->
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" doctype="html-5.0" controller="TripPandaLoginController">
+    <apex:include pageName="OTPBasedIndexPage" />
+    <div class="top-content">
+
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1>
+                            <strong>Authentication For</strong> Trip Panda Login</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Login to our site</h3>
+                                <p>Enter your OTP to log on:</p>
+                                <apex:pageMessages id="error" />
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-key"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <apex:form styleClass="login-form">
+                                <div class="form-group">
+                                    <apex:inputText value="{!OTP}" id="otp" styleClass="form-control" html-placeholder="OTP.." />
+                                </div>
+                                <apex:commandButton value="Check" id="verifyOtp" styleClass="btn" action="{!LoginAuth}" />
+                            </apex:form>
+                            <br />
+                            <apex:form >
+                                <apex:commandButton value="Resend" id="retryOtp" styleClass="btn btn-link" style="float:right;" action="{!retryOTP}" />
+                                <!--     <apex:CommandLink action="{!retryOTP}" value="Resend" styleClass="btn" id="btnCancel" immediate="true">      -->
+                            </apex:form>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        $(document).ready(function () {
+
+            $('[id$=verifyOtp]').click(function () {
+
+                console.log('madatory ...');
+                $('[id$=otp]').prop('required', true);
+            });
+
+
+            $('[id$=retryOtp]').click(function () {
+
+                console.log('non madatory ...');
+                $('[id$=otp]').prop('required', false);
+            });
+
+        });
+
+    </script>
+</apex:page>

@@ -1,0 +1,53 @@
+<!--
+  @Component Name     : newApplicantComponent.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 8/30/2019, 4:04:17 PM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/29/2019, 1:07:50 PM   shubhranshu     Initial Version
+-->
+<template>
+     <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_2-of-12"></div>
+        <div class="slds-col slds-size_8-of-12">
+            <lightning-card>
+                    <h3 slot="title">
+                        <lightning-icon icon-name="action:user" size="small"></lightning-icon>
+                        <div class="slds-p-top_small">
+                            New Applicant
+                        </div>
+                    </h3>
+                    <div slot="footer">
+                    
+                    </div>
+                
+                <div class="slds-grid slds-gutters regform">
+                    <div class="slds-col">
+                        <lightning-formatted-text value="Please Choose the Program Type "></lightning-formatted-text> 
+                        <lightning-icon icon-name="utility:chevronright" size="small"></lightning-icon>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-combobox
+                            name="Programs"
+                            label="Program Type"
+                            value={value}
+                            placeholder="Select Program Type"
+                            options={options}
+                            onchange={handleChange} >
+                        </lightning-combobox>
+                        <br />
+                        <div class="slds-float_right">
+                            <lightning-button variant="success" label="Next" title="Next" class="slds-m-left_x-small" onclick={navigateToWebPage}></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+        <div class="slds-col slds-size_2-of-12"></div>
+    </div>
+</template>

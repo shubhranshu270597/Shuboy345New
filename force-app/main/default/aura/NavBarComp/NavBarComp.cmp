@@ -1,0 +1,21 @@
+<!--
+  @File Name          : NavBarComp.cmp
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 10/30/2019, 4:53:02 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    10/30/2019   shubhranshu     Initial Version
+-->
+<aura:component>
+    <link href='/resource/bootstrap/' rel="stylesheet" />
+    <div class="navbar navbar-default navbar-static-top "  data-spy="affix" role="navigation" style="background-color: indigo;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Shipping Invoice</a>
+            </div>
+        </div>
+    </div>
+</aura:component>

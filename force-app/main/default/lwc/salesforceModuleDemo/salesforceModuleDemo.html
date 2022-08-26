@@ -1,0 +1,32 @@
+<!--
+  @File Name          : salesforceModuleDemo.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 9/4/2019, 3:52:11 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    8/30/2019   shubhranshu     Initial Version
+-->
+<template>
+    <!-- <lightning-layout vertical-align="center">
+        <template if:true={accounts.data}>
+            <template for:each={accounts.data} for:item="acc">
+                <lightning-layout-item key={acc.key}>
+                    <lightning-formatted-text value={acc.Name}></lightning-formatted-text>
+                </lightning-layout-item>
+            </template>
+        </template>
+        <template if:true={accounts.error}>
+            <p>{accounts.error}</p>       
+        </template>
+    </lightning-layout> -->
+
+    <lightning-layout vertical-align="center">
+        <lightning-layout-item padding="around-small">
+            <lightning-button label="Redirect To me" onclick={navigateToWebPage}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+
+</template>

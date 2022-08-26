@@ -1,0 +1,68 @@
+<!--
+  @Component Name     : findDuplicateLead.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 8/13/2019, 6:04:26 PM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/13/2019, 3:10:24 PM   shubhranshu     Initial Version
+-->
+<template>
+    <lightning-card title="Lead Duplicate" icon-name="doctype:image">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-input label="Lead Name" value={leadName} onchange={findLead}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button label="Find Leads for me" variant="success" onclick={findDuplicateLeads}>
+                </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    <lightning-card title="Lead Duplicate Records" icon-name="doctype:image">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="First Name">First Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Last Name">Last Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Email">Email</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Phone">Phone</div>
+                </th>
+                </tr>
+            </thead>         
+            <tbody>
+                <template for:each={leads} for:item="ld">
+                    <tr class="slds-hint-parent" key={ld.key}>
+                        <th data-label="First Name" scope="row">
+                        <div class="slds-truncate" title="FirstName">
+                            <a href="javascript:void(0);" tabindex="-1"><lightning-formatted-text value={ld.FirstName}></lightning-formatted-text></a>
+                        </div>
+                        </th>
+                        <td data-label="Last Name">
+                        <div class="slds-truncate" title="LastName"><lightning-formatted-text value={ld.LastName}></lightning-formatted-text></div>
+                        </td>
+                        <td data-label="Email">
+                        <div class="slds-truncate" title="Email"><lightning-formatted-email value={ld.Email}></lightning-formatted-email></div>
+                        </td>
+                        <td data-label="Phone">
+                        <div class="slds-truncate" title="Phone"><lightning-formatted-phone value={ld.MobilePhone}></lightning-formatted-phone></div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+            </table>
+    </lightning-card>
+
+</template>

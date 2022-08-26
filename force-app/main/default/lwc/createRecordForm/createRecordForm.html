@@ -1,0 +1,19 @@
+<!--
+  @File Name          : createRecordForm.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 9/20/2019, 4:27:42 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    9/20/2019   shubhranshu     Initial Version
+-->
+<template>
+    <lightning-record-form
+        object-api-name={accountObject}
+        layout-type="Full" 
+        columns="3" 
+        onsuccess={handleAccountCreated}>
+    </lightning-record-form>
+</template>

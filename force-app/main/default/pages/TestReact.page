@@ -1,0 +1,35 @@
+<!--
+  @File Name          : TestReact.page
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 11/20/2019, 4:12:47 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    11/20/2019   shubhranshu     Initial Version
+-->
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false"  applyBodyTag="false" applyHtmlTag="false">
+<html>
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
+<body>
+    <!-- Remote Objects definition to set accessible sObjects and fields -->
+    <!-- <apex:remoteObjects >
+        <apex:remoteObjectModel name="Post__c" jsShorthand="Post" 
+            fields="Id, Name, Categories__c, Content__c">
+        </apex:remoteObjectModel>
+    </apex:remoteObjects> -->
+
+    <!-- reactjs -->
+    <div id="body" />
+    <!--Development to point to ngrok. Also update the ngrok's url to match your localhost's url-->
+    <script src="https://cca77cf6.ngrok.io/bundle.js"/>
+
+    <!-- Uncomment and use the below for production to point to final static resource "reactreduxblog"(bundle.js) -->
+    <!-- <script src="{!URLFOR($Resource.reactreduxblog)}"/> -->
+   
+  </body>
+</html>
+</apex:page>

@@ -1,0 +1,83 @@
+<!--
+  @description       : 
+  @author            : shubhranshu
+  @group             : 
+  @last modified on  : 07-18-2020
+  @last modified by  : shubhranshu
+  Modifications Log 
+  Ver   Date         Author        Modification
+  1.0   07-11-2020   shubhranshu   Initial Version
+-->
+<aura:component>
+    <aura:attribute name="errorMsg" type="String" />
+    <aura:attribute name="errorFound" type="Boolean" default="false" />
+    <aura:attribute name="successMsg" type="String" />
+    <aura:attribute name="successFound" type="Boolean" default="false" />
+    <aura:attribute name="warningMsg" type="String" />
+    <aura:attribute name="warningFound" type="Boolean" default="false" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!-- For Success Messages -->
+    <aura:if isTrue="{!v.successFound}">
+        <div class="demo-only" style="height:4rem">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_success" role="status">
+                    <span class="slds-assistive-text">success</span>
+                    <div class="slds-notify__content">
+                        {!v.successMsg}
+                    </div>
+                    <div class="slds-notify__close slds-float--right">
+                        <lightning:buttonIcon iconName="utility:close" class="toastMessage" variant="bare" alternativeText="Close" title="Close" onclick="{!c.closeSuccessMessage}">
+                            <span class="slds-assistive-text">Close</span>
+                        </lightning:buttonIcon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+
+    <!-- for Error Messages-->
+    <aura:if isTrue="{!v.errorFound}">
+        <div class="demo-only" style="height:4rem">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify  slds-notify_toast slds-theme_error" role="status">
+                    <span class="slds-assistive-text">Error</span>
+                    <div class="slds-notify__content">
+                        {!v.errorMsg}
+                    </div>
+                    <div class="slds-notify__close">
+                        <div class="slds-notify__close slds-float--right">
+                            <lightning:buttonIcon iconName="utility:close" class="toastMessage" variant="bare" alternativeText="Close"
+                                title="Close" onclick="{!c.closeSuccessMessage}">
+                                <span class="slds-assistive-text">Close</span>
+                            </lightning:buttonIcon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+
+    <!-- for Warning Messages-->
+    <aura:if isTrue="{!v.warningFound}">
+        <div class="demo-only" style="height:4rem">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify  slds-notify_toast slds-theme_error" role="status">
+                    <span class="slds-assistive-text">Error</span>
+                    <div class="slds-notify__content">
+                        {!v.warningMsg}
+                    </div>
+                    <div class="slds-notify__close">
+                        <div class="slds-notify__close slds-float--right">
+                            <lightning:buttonIcon iconName="utility:close" class="toastMessage" variant="bare" alternativeText="Close"
+                                title="Close" onclick="{!c.closeSuccessMessage}">
+                                <span class="slds-assistive-text">Close</span>
+                            </lightning:buttonIcon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+
+</aura:component>

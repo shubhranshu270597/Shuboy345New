@@ -1,0 +1,19 @@
+<!--
+  @Component Name     : simpleEvent.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 25/8/2019, 12:30:19 AM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    25/8/2019, 12:15:43 AM   shubhranshu     Initial Version
+-->
+<template>
+    <template  if:true={page}>
+        Current Page number is - {page}
+    </template>
+    <c-paginator onnext={handleNext} onprevious={handlePrevious}></c-paginator>
+</template>

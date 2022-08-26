@@ -1,0 +1,18 @@
+<!--
+  @description       : 
+  @author            : shubhranshu
+  @group             : 
+  @last modified on  : 05-11-2021
+  @last modified by  : shubhranshu
+  Modifications Log 
+  Ver   Date         Author        Modification
+  1.0   05-11-2021   shubhranshu   Initial Version
+-->
+<aura:component >
+    <aura:attribute name="eventMessage" type="String"/> 
+    <aura:handler name="sampleCmpEvent" event="c:WelcomeEvent" action="{!c.parentComponentEvent}"/>
+    <div class="slds-m-around_xx-large">
+        <c:BottomCom /> 
+        <p>{!v.eventMessage}</p> 
+    </div>
+</aura:component>

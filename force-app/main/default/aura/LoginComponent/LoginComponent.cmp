@@ -1,0 +1,16 @@
+<!--
+  @Component Name     : LoginComponent.cmp
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 8/28/2019, 3:53:13 PM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/28/2019, 3:53:13 PM   shubhranshu     Initial Version
+-->
+<aura:component>
+    <c:login></c:login>
+</aura:component>

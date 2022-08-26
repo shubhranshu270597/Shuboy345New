@@ -1,0 +1,21 @@
+<!--
+  @File Name          : viewEditRecord.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 9/20/2019, 5:37:11 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    9/20/2019   shubhranshu     Initial Version
+-->
+<template>
+    <lightning-record-form
+        record-id={recordId}
+        object-api-name={objectApiName}
+        layout-type="Compact"
+        columns="2"
+        mode="readonly"
+        onsubmit={handleSubmit}>
+    </lightning-record-form>
+</template>

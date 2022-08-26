@@ -1,0 +1,39 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" doctype="html-5.0" controller="OTPBasedLoginController">
+<apex:include pageName="OTPBasedIndexPage"/>
+     <div class="top-content">
+            
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Authentication For</strong> Login Form</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Login to our site</h3>
+                                    <p>Enter your OTP to log on:</p>
+                                    <apex:pageMessages id="error"/>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-key"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                              <apex:form styleClass="login-form">
+                                    <div class="form-group">
+                                        <apex:inputSecret value="{!objLead.OTP__c}" styleClass="pwd form-control" required="true" html-placeholder="OTP.."/>
+                                    </div>
+                                    <apex:commandButton value="Check" styleClass="btn" action="{!LoginAuth}" />
+                                </apex:form>  
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+</apex:page>

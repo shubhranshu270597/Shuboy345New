@@ -1,0 +1,37 @@
+<!--
+  @Component Name     : accountTiltle.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 25/8/2019, 12:53:55 AM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/8/2019, 3:07:11 PM   shubhranshu     Initial Version
+-->
+<template>
+    <!-- <lightning-card title={account.Name} icon-name="standard:account">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+               <p>
+                 <lightning-formatted-text value={account.Name}></lightning-formatted-text>  
+               </p>
+               <p>
+                 <lightning-formatted-text value={account.Phone}></lightning-formatted-text>  
+               </p>
+               <p>
+                 <lightning-formatted-text value={account.Industry}></lightning-formatted-text>
+               </p>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card> -->
+    <a href="Javascript:void(0);" onclick={handleSelect}>
+      <lightning-layout vertical-align="center">
+        <lightning-layout-item padding="around-small">
+             {account.Name}
+        </lightning-layout-item>
+      </lightning-layout>  
+    </a>
+</template>

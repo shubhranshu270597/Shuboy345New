@@ -1,0 +1,36 @@
+<!--
+  @Component Name     : login.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 8/29/2019, 1:56:12 PM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/28/2019, 3:26:23 PM   shubhranshu     Initial Version
+-->
+<template>
+    <div class="slds-clearfix">
+        <div class="slds-global-header__item slds-float_left">
+            <a href="#"><img src={logoName}></img> </a>
+        </div>
+    </div>
+    <br /><br />
+
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_2-of-12"></div>
+        <div class="slds-col slds-size_8-of-12">
+            <lightning-tabset>
+                <lightning-tab label="New Applicant" title="New Applicant">
+                    <c-new-applicant-component></c-new-applicant-component>
+                </lightning-tab>
+                <lightning-tab label="Complete Registration/Payment" title="(Enter Registration no. and DOB)">
+                    <c-registration-payment-component></c-registration-payment-component>
+                </lightning-tab>
+            </lightning-tabset>   
+        </div>
+        <div class="slds-col slds-size_2-of-12"></div>
+    </div>
+</template>

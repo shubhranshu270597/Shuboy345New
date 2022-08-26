@@ -1,0 +1,75 @@
+<!--
+  @File Name          : newsPanda.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 29/3/2020, 1:42:11 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    29/3/2020   shubhranshu     Initial Version
+-->
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-show_large slds-large-size_2-of-12"></div>
+        <div class="slds-col slds-large-size_8-of-12">
+            <div class="slds-global-header__item slds-card">
+                <div class="slds-global-header__logo"></div>
+                <div><span>News Panda</span></div>
+            </div>
+            <div class="slds-global-header__item slds-card">
+                <lightning-input placeholder="Enter your search key here...." name="searchValue" value={searchValue} onchange={setCriteria}></lightning-input>
+                <br>
+                <lightning-button label="search" variant="success" onclick={searchNewsPanda}></lightning-button>
+                <br>
+            </div>
+            <div class="slds-global-header__item slds-card">
+                <a href="https://amzn.to/3aDoNTu">Best Selling T -Shirts, Buy Now !!!</a>
+                <br>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-m-top_small">
+                    <!-- SLDS Description Card starts here -->
+                    <article class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-media__body">
+                                    <h2 class="slds-card__header-title">
+                                        <span class="slds-card__header-link slds-truncate">
+                                            <span>Total Results found : {totalResultsFound}</span>
+                                        </span>
+                                    </h2>
+                                </div>
+                            </header>
+                        </div>
+                        <hr class="slds-m-around_none"></hr>
+                        <template if:true={success}>
+                            <div class="slds-card__body slds-card__body_inner">
+                                <template for:each={newsData} for:item="news">
+                                    <c-news-list key={news.title} news={news}></c-news-list>
+                                </template>
+                            </div>
+                        </template>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-show_large slds-large-size_2-of-12"></div>
+    </div>
+
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-show_large slds-large-size_4-of-12">
+        </div>
+        <div class="slds-col slds-show_large slds-large-size_4-of-12">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-show_large slds-large-size_10-of-12">
+                </div>
+                <div class="slds-col slds-show_large slds-large-size_2-of-12">
+                    <c-paginator onnext={handleNext} onprevious={handlePrevious}></c-paginator>
+                </div>
+            </div>  
+        </div>
+        <div class="slds-col slds-show_large slds-large-size_4-of-12">
+        </div>
+    </div>
+</template>

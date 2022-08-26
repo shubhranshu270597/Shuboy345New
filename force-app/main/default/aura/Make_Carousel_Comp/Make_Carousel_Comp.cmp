@@ -1,0 +1,29 @@
+<!--
+  @description       : 
+  @author            : shubhranshu
+  @group             : 
+  @last modified on  : 05-11-2021
+  @last modified by  : shubhranshu
+  Modifications Log 
+  Ver   Date         Author        Modification
+  1.0   07-06-2020   shubhranshu   Initial Version
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="lstimg" type="Object[]"/>
+    <aura:attribute name="lstImageName" type="Object[]" />
+    <aura:attribute name="lstImageHeader" type="Object[]" />
+    <aura:attribute name="lstImageAltText" type="Object[]" />
+
+    <aura:method name="callChild" action="{!c.listAction}" />
+    <div class="slds-size_1-of-1">
+        <div class="slds-box" style="z-index: 15; border-color: rgb(255, 255, 255);" >
+            <!--Set  disableAutoScroll="true" for disabling auto scrolling-->
+            <lightning:carousel disableAutoScroll="false">
+                <aura:iteration items="{!v.lstimg}" var="img">
+                    <lightning:carouselImage src = "{!img.image}" header = "{!img.Header}"  alternativeText = "{!img.AlterText}" >
+                    </lightning:carouselImage>
+                </aura:iteration>
+                </lightning:carousel>
+        </div>
+    </div>
+</aura:component>

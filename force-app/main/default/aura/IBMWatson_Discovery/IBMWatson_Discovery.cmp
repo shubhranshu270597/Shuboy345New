@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" controller="IBMWatsonDiscovery_Controller">
+    <aura:attribute name="searchResults" type="Watson_Discovery__x"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:card>
+        <strong><center>Watson Discovery</center></strong><br />
+        <table class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer slds-table--fixed-layout">
+            <tr class="slds-text-heading--label">
+                <th scope="col"><div class="slds-truncate" title="User">User</div></th>
+                <th scope="col"><div class="slds-truncate" title="User">Twitter</div></th>
+            </tr>
+            <tbody>
+                <aura:iteration items="{!v.searchResults}" var="result">
+                    <tr>
+                        <td><div class="slds-truncate" title="{!result.User__c}">{!result.User__c}</div></td>
+                        <td><a href="{!'https://twitter.com/'+result.Twitter__c}" target="_blank">{!result.Twitter__c}</a></td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </lightning:card>
+</aura:component>

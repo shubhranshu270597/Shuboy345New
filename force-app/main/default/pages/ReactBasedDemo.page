@@ -1,0 +1,36 @@
+<!--
+  @File Name          : ReactBasedDemo.page
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 11/20/2019, 7:24:21 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    11/19/2019   shubhranshu     Initial Version
+-->
+<apex:page showHeader="false" sidebar="false" applyBodyTag="false">
+  <apex:includeScript value="https://npmcdn.com/react@15.3.1/dist/react.min.js"/>
+  <apex:includeScript value="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.min.js"/>
+  <apex:includeScript value="https://npmcdn.com/babel-core@5.8.38/browser.min.js"/>
+  <apex:includeScript value="https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"/>
+  <apex:includeScript value="//cdn.rawgit.com/mattwelch/makeDeferredProvider/master/makeDeferredProvider.min.js"/>
+  <apex:stylesheet value="//cdn.rawgit.com/mailtoharshit/LightingDesignSystem/master/salesforce-lightning-design-system-v0.8.0/assets/styles/salesforce-lightning-design-system-vf.min.css" />
+  
+  <!-- <apex:includeScript value="{!URLFOR($Resource.react_intl_1_2_2, '/react-intl-1.2.2/dist/react-intl.min.js')}"/> -->
+  <apex:stylesheet value="{!$Resource.semantic}" /> 
+  <apex:remoteObjects >
+    <apex:remoteObjectModel name="Account" jsShorthand="acc" 
+       fields="Name,Id,Fax,Phone,Type">
+       <apex:remoteObjectField name="Description" jsShorthand="desc"/>
+    </apex:remoteObjectModel>
+ </apex:remoteObjects>
+  <body>
+
+  <div>
+    <div id="fastVfWithReactDemo"/>
+  </div>
+  <script type="text/babel" src="{!URLFOR($Resource.ResourcesForReactDemo, '/ResourcesForReactDemo/Script/Mainform.js')}"></script>
+  
+</body>
+</apex:page>

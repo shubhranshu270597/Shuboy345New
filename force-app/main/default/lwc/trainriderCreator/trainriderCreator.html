@@ -1,0 +1,25 @@
+<!--
+  @File Name          : trainriderCreator.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 8/10/2019, 4:51:47 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    8/10/2019   shubhranshu     Initial Version
+-->
+<template>
+    <lightning-card title="My Pratham Soceity Details" icon-name="custom:custom14">
+        <template if:true={praSoc.data}>
+            <div class="slds-m-around-medium">
+                <lightning-formatted-text value={nameOfMember}></lightning-formatted-text>
+                <lightning-formatted-number value={totalAmount}></lightning-formatted-number>
+                <lightning-formatted-text value={billNumber}></lightning-formatted-text>
+            </div>
+        </template>
+        <template if:true={praSoc.error}>
+            <p>Sorry, No data found yet....</p>
+        </template>
+    </lightning-card>
+</template>

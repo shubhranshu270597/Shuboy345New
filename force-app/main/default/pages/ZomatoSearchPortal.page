@@ -1,0 +1,25 @@
+<!--
+  @File Name          : ZomatoSearchPortal.page
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 10/10/2019, 2:43:04 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    10/10/2019   shubhranshu     Initial Version
+-->
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false">
+    <apex:includeLightning />
+    <div id="lightning"></div>
+    <script>
+        $Lightning.use("c:ZomatoSearchApp", function () {
+            $Lightning.createComponent("c:ZomatoSearchComponent", {},
+                "lightning",
+                function (cmp) {
+                    console.log('Zomato search component created successfully ...');
+
+                });
+        });
+    </script>
+</apex:page>

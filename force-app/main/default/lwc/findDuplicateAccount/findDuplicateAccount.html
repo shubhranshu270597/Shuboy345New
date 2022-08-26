@@ -1,0 +1,84 @@
+<!--
+  @Component Name     : findDuplicateAccount.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 8/20/2019, 6:34:48 PM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/9/2019, 11:43:15 AM   shubhranshu     Initial Version
+-->
+<template>
+    <lightning-card title="Account" icon-name="standard:account">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-input label="Account Name" value={accName} onchange={lstAccount}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button label="search Duplicate" variant="success" onclick={findAccounts}>
+                </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+    <lightning-card title="Account Duplicate List" icon-name="doctype:image">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="First Name">Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Email">Industry</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Last Name">Account Number</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Phone">Phone</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Phone">Website</div>
+                </th>
+                </tr>
+            </thead>         
+            <tbody>
+                <template for:each={accounts} for:item="acc">
+                    <tr class="slds-hint-parent" key={acc.key}>
+                        <th data-label="First Name" scope="row">
+                        <div class="slds-truncate" title="Name">
+                            <a href="javascript:void(0);" tabindex="-1"><lightning-formatted-text value={acc.Name}></lightning-formatted-text></a>
+                        </div>
+                        </th>
+                        <td data-label="Industry">
+                            <div class="slds-truncate" title="Industry"><lightning-formatted-text value={acc.Industry}></lightning-formatted-text></div>
+                        </td>
+                        <td data-label="AccountNumber">
+                            <div class="slds-truncate" title="AccountNumber"><lightning-formatted-number value={acc.AccountNumber}></lightning-formatted-number></div>
+                        </td>
+                        <td data-label="Phone">
+                            <div class="slds-truncate" title="Phone"><lightning-formatted-phone value={acc.Phone}></lightning-formatted-phone></div>
+                        </td>
+                        <td data-label="Website">
+                            <div class="slds-truncate" title="Website"><lightning-formatted-url value={acc.Website}></lightning-formatted-url></div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+            </table>
+    </lightning-card>
+        <!-- <lightning-layout title="Duplicate List" icon-name="custom:custom14"> 
+            <template for:each={accounts} for:item="acc">
+                <lightning-layout-item key={acc.key}>
+                    <p><lightning-formatted-text value={acc.Name}></lightning-formatted-text></p>
+                    <p><lightning-formatted-phone value={acc.Phone}></lightning-formatted-phone></p>
+                    <p><lightning-formatted-name value={acc.Industry}></lightning-formatted-name></p>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </lightning-card> -->
+</template>

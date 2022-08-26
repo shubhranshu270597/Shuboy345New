@@ -1,0 +1,110 @@
+<apex:page doctype="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" controller="StudnetLoginController">
+    
+        <apex:include pageName="StudentPortalFilesPage"/>
+        <apex:stylesheet value="{!URLFOR($Resource.StudentPortalCSSandJS,'/assets/css/index.css')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.StudentPortalCSSandJS,'/assets/css/style.css')}"/>
+    <body>
+        <div class="wrapper" style="">
+        <nav class="navbar nav1 navbar-fixed-top" style="background-color:#F5F5F5">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right" >
+                <li><a href=""><i class="fa fa-envelope c22" aria-hidden="true" style="font-size: 1.3vw;color: black"></i></a></li>
+                <li><a href=""><i class="fa fa-bell c22" aria-hidden="true" style="font-size: 1.3vw;color: black"></i></a></li>
+             <li class="dropdown" style="">
+    
+                    <a href="#" class="dropdown-toggle c1" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true" ></i> Admin User <b class="fa fa-angle-down"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                    </ul>
+                </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="sidenav list" style="background-color:#F5F5F5">
+            <div class="logo text-center">
+                <apex:image url="https://c.ap4.content.force.com/servlet/servlet.ImageServer?id=0156F00000G3bDe&oid=00D6F0000029WDI&lastMod=1540711680000"  height="100" width="150" ></apex:image> 
+            </div>
+    
+      <a href="/apex/StudentFeesPage?id={!LeadId}" data-toggle="collapse" data-target="#crm" class="collapsed" style="text-decoration: none"><i class="fa fa-user p1"></i>&nbsp;&nbsp;&nbsp;Fees<i class="fa fa-angle-double-down" style="font-size: 1vw;margin-left: 80px;"></i></a>
+    <!--
+         <ul class="sub-menu collapse" id="crm">
+                      <a href=""> <i class="fa fa-angle-right sub-ico" style=""></i>New Service 1</a>
+                      <a href=""><i class="fa fa-angle-right sub-ico" ></i>New Service 2</a>
+                        <a href=""><i class="fa fa-angle-right sub-ico"></i>New Service 3</a>
+                    </ul>
+    -->
+      <a href="#services" data-toggle="collapse" data-target="#employee" class="collapsed" style="text-decoration: none"><i class="fa fa-black-tie p1" style="" ></i>&nbsp;&nbsp;&nbsp;EMPLOYEE<i class="fa fa-angle-double-down" style="font-size: 1vw;margin-left: 40px;"></i></a>
+             <ul class="sub-menu collapse" id="employee">
+                      <a href=""><i class="fa fa-angle-right sub-ico" style=""></i> New Service 1</a>
+                      <a href=""><i class="fa fa-angle-right sub-ico" style=""></i>New Service 2</a>
+                        <a href=""><i class="fa fa-angle-right sub-ico" style=""></i>New Service 3</a>
+                    </ul>
+        
+      <a href="#contact"><i class="fa fa-calendar p1" ></i>&nbsp;&nbsp;&nbsp;LEAVE &amp; &nbsp;&nbsp;&nbsp;&nbsp;ATTENDANCE</a>
+    </div>
+    <div class="clear"></div>
+            <div class="container-fluid">
+            <div class="container">
+    <div class="main">
+        <br /><br /><br /><br />
+            <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="dash-box dash-box-color-1">
+                    <div class="dash-box-icon">
+                        <i class="glyphicon glyphicon-cloud"></i>
+                    </div>
+                    <div class="dash-box-body">
+                        <span class="dash-box-count">8,252</span>
+                        <span class="dash-box-title">FEES</span>
+                    </div>
+                    <apex:form >
+                    <div class="dash-box-action">
+                        <button><a href="/apex/StudentFeesPage?id={!LeadId}">More Info</a></button>
+                    </div>     
+                    </apex:form>         
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dash-box dash-box-color-2">
+                    <div class="dash-box-icon">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </div>
+                    <div class="dash-box-body">
+                        <span class="dash-box-count">100</span>
+                        <span class="dash-box-title">LEAVE &amp; ATTENDANCE</span>
+                    </div>
+                    
+                    <div class="dash-box-action">
+                        <button>More Info</button>
+                    </div>              
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dash-box dash-box-color-3">
+                    <div class="dash-box-icon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                    <div class="dash-box-body">
+                        <span class="dash-box-count">2502</span>
+                        <span class="dash-box-title">EMPLOYEE</span>
+                    </div>
+                    
+                    <div class="dash-box-action">
+                        <button>More Info</button>
+                    </div>              
+                </div>
+            </div>
+        </div>
+    </div>
+        
+           </div>
+         </div>
+    </div>      
+    </div>
+    </body>
+     
+</apex:page>

@@ -1,0 +1,55 @@
+<!--
+  @File Name          : lwcTest.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 10/11/2019, 6:11:10 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    10/10/2019   shubhranshu     Initial Version
+-->
+<template>
+    <lightning-input name="firstName" label="First Name" onchange={handleName}></lightning-input><br/>
+    <lightning-input name="lastName" label="Last Name" onchange={handleName}></lightning-input><br/>
+    
+    <p>Hello {upperCaseNameValue} !</p>
+    
+    <lightning-card title="Hello Condition based show msg" icon-name="custom:custom21">
+        <div class="slds-m-around-medium">
+            <lightning-input type="checkbox" label="Show Details" onchange={checkShowDetailsValue}></lightning-input>
+            <template if:true={showDetails}>
+                <p>Hi show details person...:)</p>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="for each example" icon-name="custom:custom14">
+       <ul class="slds-m-around-medium">
+         <template for:each={contacts} for:item="contact">
+            <li key={contact.id}>
+                {contact.Name} , {contact.Title}
+            </li>
+         </template>
+        </ul>
+    </lightning-card>
+
+    <lightning-card title="Iterator Example" icon-name="custom:custom15">
+        <ul class="slds-m-around-medium">
+            <template iterator:iter={contacts}>
+                <li key={iter.value.Id}>
+                   <div if:true={iter.first} class="list-first"></div> 
+                   {iter.value.Name} , {iter.value.Title}
+                   <div if:true={iter.last} class="list-last"></div>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+
+    <lightning-card title="Tracked Prop Example" icon-name="standard:story">
+
+        {storyValue}
+        <lightning-button label="click me to change value :)" onclick={changeTrackPropValue}></lightning-button>
+    </lightning-card> 
+
+</template>

@@ -1,0 +1,30 @@
+<!--
+  @File Name          : zomato.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 10/10/2019, 2:11:14 AM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    8/10/2019   shubhranshu     Initial Version
+-->
+<template>
+    <lightning-card title="Enter the location" icon-name="standard:location">
+        <lightning-layout>
+            <lightning-layout-item size="6" padding="around-small">
+                <div class="header-column">
+                    <lightning-input label="Location" value={location} onchange={handlelocationChange}></lightning-input>
+                    <lightning-button label="Select Location" onclick={selectLocation}></lightning-button>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <div class="header-column">
+                    <lightning-input label="Location Selected" value={selectedLocation}  readonly onchange={handlelocationChange}></lightning-input>
+                    <lightning-input label="Resturant Name" value={restaurant}  onchange={handleRestaurantChange}></lightning-input>
+                    <lightning-button label="Search Resturant" onclick={searchRestaurant}></lightning-button>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

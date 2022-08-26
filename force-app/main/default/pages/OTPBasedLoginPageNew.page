@@ -1,0 +1,58 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" doctype="html-5.0" controller="OTPBasedLoginPageNewController">
+<apex:include pageName="OTPBasedIndexPage"/>
+     <div class="top-content">
+            
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>OTP Based</strong> Login Form</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Login to our site</h3>
+                                    <p>Enter your username and password to log on:</p>
+                                    <apex:pageMessages id="error"/>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-key"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                              <apex:form styleClass="login-form">
+                                    <div class="form-group">
+                                        <apex:inputField value="{!objLead.Email}"  styleClass="email form-control" required="true" type="email" html-placeholder="Username.." />
+                                    </div>
+                                    <div class="form-group">
+                                        <apex:inputSecret value="{!objLead.Password__c}" styleClass="pwd form-control" required="true" html-placeholder="Password.."/>
+                                    </div>
+                                    <apex:commandButton value="Sign in"  styleClass="btn" action="{!LoginToMyPage}" />
+                                 </apex:form>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                            <h3>...or login with:</h3>
+                            <div class="social-login-buttons">
+                                <a class="btn btn-link-1 btn-link-1-facebook" href="#">
+                                    <i class="fa fa-facebook"></i> Facebook
+                                </a>
+                                <a class="btn btn-link-1 btn-link-1-twitter" href="#">
+                                    <i class="fa fa-twitter"></i> Twitter
+                                </a>
+                                <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+                                    <i class="fa fa-google-plus"></i> Google Plus
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+   </apex:page>

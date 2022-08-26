@@ -1,0 +1,25 @@
+<template>
+        <div class="slds-grid slds-wrap slds-p-bottom_small">
+                <div class="slds-col slds-large-size_10-of-12 slds-medium-size_10-of-12 slds-size_10-of-12">
+                    <dl class="slds-list_stacked">
+                        <dt class="slds-item_label slds-text-color_weak" title="Title">Title:</dt>
+                        <dd class="slds-item_detail" title={news.title}>{news.title}</dd>
+
+                        <dt class="slds-item_label slds-text-color_weak" title="Description">Description:</dt>
+                        <dd class="slds-item_detail" title={news.description}>{news.description}</dd>
+
+                        <dt class="slds-item_label slds-text-color_weak" title="Content">Content:</dt>
+                        <dd class="slds-item_detail" title={news.content}>{news.content}</dd>
+
+                        <dt class="slds-item_label slds-text-color_weak" title="More Info.">More Information:</dt>
+                        <dd class="slds-item_detail" title={news.url}><a href={news.url} target="_blank">{news.url}</a></dd>
+
+                        <dt class="slds-item_label slds-text-color_weak " title="Author">Author:</dt>
+                        <dd class="slds-item_detail" title={news.author}>{news.author}</dd>
+                    </dl>
+                </div>
+            <div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_2-of-12">
+                <image alt="urlToImage" src={news.urlToImage} height="200px" width="200px"></image>
+            </div>            
+        </div>
+</template>

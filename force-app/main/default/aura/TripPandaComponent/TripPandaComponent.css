@@ -1,0 +1,26 @@
+.THIS {
+   
+}
+
+.THIS .slds-global-header__logo{
+    background-image: url('/resource/1594031536000/TripPandaLogo');
+    height: 4rem;
+}
+
+.THIS .headerPage{
+    height: 5.0rem;
+}
+
+.THIS .slds-carousel__content{
+    height: 3rem;
+    overflow: hidden;
+    align-content: center;
+}
+
+.THIS .carouselComp{
+    margin-top: 5rem;
+}
+
+.THIS .feedStyle{
+    max-width: 100%;
+}

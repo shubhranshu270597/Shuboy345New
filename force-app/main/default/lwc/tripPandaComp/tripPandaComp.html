@@ -1,0 +1,81 @@
+<!--
+  @File Name          : tripPandaComp.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 29/12/2019, 7:27:49 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    5/12/2019   shubhranshu     Initial Version
+-->
+<template>
+  <article class="slds-card slds-m-top_none backimg">
+    <div class="slds-card__header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__body">
+          <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-1 slds-p-around_x-small">
+            <lightning-formatted-text value="Welcome to Prati balaji Darshan"></lightning-formatted-text> 
+            &nbsp;&nbsp;{TpUser.TP_Name__c}<br />
+            <lightning-formatted-text value="Your total amount to pay is: "></lightning-formatted-text>
+            &nbsp;&nbsp;{TpUser.Total_amount_to_pay__c}<br />
+            <lightning-formatted-text value="Please fill the reimbursement details : "></lightning-formatted-text>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="slds-card__body slds-card__body_inner">
+      <div class="slds-grid slds-wrap slds-form-element">
+        <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-1 slds-p-around_x-small ">
+          <lightning-input class="inputs" type="text" label="Name :" data-field="Reimbursement_name__c" required="required"
+            placeholder="Enter the Reimbursement name" value={reimbursement.Reimbursement_name__c} onchange={handleName}></lightning-input>
+        </div>
+        <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-1 slds-p-around_x-small ">
+          <lightning-input type="number" label="Amount :" data-field="Amount__c" required="required" value={reimbursement.Amount__c}
+            placeholder="Enter the amount" onchange={handleName}></lightning-input>
+        </div>
+        <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-1 slds-p-around_x-small ">
+          <lightning-combobox label="Reimbursement Type :" required="required" value={reimbursement.Reimbursement_type__c} placeholder="choose type..."
+            options={typeList} data-field="Reimbursement_type__c" onchange={handleName}>
+          </lightning-combobox>
+        </div>
+        <template if:true={checkforOtherType}>
+          <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-1 slds-p-around_x-small ">
+            <lightning-input type="text" label="If other Type , please specify :" data-field="Other_Type__c" required="required" value={reimbursement.Other_Type__c}
+              placeholder="If other, please specify" onchange={handleName}></lightning-input>
+          </div>
+        </template>
+        <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-1 slds-p-around_x-small ">
+          <lightning-textarea class="inputs" type="text" label="Description :" data-field="Description__c"
+            placeholder="Enter the description if any..." value={reimbursement.Description__c} onchange={handleName}>
+          </lightning-textarea>
+        </div>
+        <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-1 slds-p-around_x-small">
+          <lightning-combobox data-field="TripPandaMemberName__c" label="Requested to" required="required" value={reimbursement.TripPandaMemberName__c}   
+             placeholder="Choose the trip panda user" onchange={handleName} options={tpUserOptions}>
+          </lightning-combobox>
+        </div>
+        <div class="slds-col slds-large-size_1-of-1 slds-medium-size_1-of-1 slds-size_1-of-1 slds-p-horizontal_x-small slds-p-vertical_large">
+          <button class="slds-button slds-button_success" onclick={Save}>Save</button>
+        </div>
+      </div>
+    </div>
+  </article>
+  <br /><br /><br />
+  <article class="slds-card slds-m-top_none" if:true={getDetails}>
+    <div class="slds-card__header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__body">
+          <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-1 slds-p-around_x-small">
+              <lightning-formatted-text value="Reimbursement requested details by trip panda user."></lightning-formatted-text>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-1 slds-p-around_x-small"> 
+        <template for:each={reibursementData} for:item="re" for:index="i">
+          <c-reimbursement-list key={re.Id} reimbursement={re}></c-reimbursement-list>
+        </template>
+    </div>
+  </article>
+</template>

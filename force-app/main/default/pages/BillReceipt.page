@@ -1,0 +1,30 @@
+<apex:page title="Total BillSummary For Pratham Residency" showHeader="false" sidebar="false" renderAs="pdf" controller="TotalBillSummaryController">
+    <apex:stylesheet value="{!$Resource.PrathamCSS}"/>
+     <div style="width:100%; margin:5px auto;font:Normal 16px/30px Helvetica Narrow, sans-serif;">
+         <!-- <apex:outputText value="Date: {0,date,dd-MM-yyyy}" style="float:right; margin-right:50px;">
+              <apex:param value="{!TODAY()}" />
+         </apex:outputText> -->
+         <div class="container">
+           <center><h2><b>Pratham Residency Co-operative Housing Society Ltd.</b></h2>
+              <p>Registration number: NBOM/ CIDCO/HSG/(TC)4089/JTR/ 2011-12</p>
+              <p>Plot no 234, Sector 21, Kamothe , Navi Mumbai 410209</p></center>
+         </div>
+         <div class="container">
+          <p>Receipt No.: <b>{!psbg.Receipt_Number__c}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flat No.: <b>{!psbg.Flat_Number__c} </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="Date: {0,date,dd-MM-yyyy}" style="float:right; margin-right:50px;">
+              <apex:param value="{!TODAY()}" />
+          </apex:outputText></p>
+          <p>Received with thanks from Mr./Mrs./Ms. <b>{!psbg.Name_of_Member__c} </b></p>
+          <p>Sum of Rs. <b>{!psbg.Total_Amount__c}</b> By Cheque _______________________________Date ______________</p>
+          <p>Drawn On_____________________Against Bill No <b>{!psbg.Bill_Number__c} </b><apex:outputText value="Dated   {0,date,dd-MM-yyyy}" style="float:right; margin-right:50px;">
+              <apex:param value="{!psbg.createddate}" />
+          </apex:outputText></p>
+          <p>Rs __________________________For <b>Pratham Residency Co-operative Housing Society Ltd.</b></p>
+        </div>
+        <br />
+        <p>Receipt is valid subject to realization of cheque.</p>
+        <br />
+         <div style="float:right; margin-left:50px;">
+           <p>Secretary / Chairman/Treasurer</p>
+         </div>    
+    </div>
+</apex:page>

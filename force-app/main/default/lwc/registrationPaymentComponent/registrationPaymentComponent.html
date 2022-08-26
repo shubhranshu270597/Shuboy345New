@@ -1,0 +1,46 @@
+<!--
+  @Component Name     : registrationPaymentComponent.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 8/29/2019, 4:10:07 PM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/29/2019, 1:13:54 PM   shubhranshu     Initial Version
+-->
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_2-of-12"></div>
+        <div class="slds-col slds-size_8-of-12">
+            <lightning-card>    
+                    <h3 slot="title">
+                        <lightning-icon icon-name="action:following" size="small"></lightning-icon>
+                        <div class="slds-p-top_small">
+                            Complete Registration/Payment (Enter Registration no. and DOB)
+                        </div>
+                    </h3>
+                    <div slot="footer">
+                    </div>
+                
+                <div class="slds-grid slds-gutters regform">
+                    <div class="slds-col">
+                        <lightning-formatted-text value="Please fill the registration credentials"></lightning-formatted-text> 
+                        <lightning-icon icon-name="utility:chevronright" size="small"></lightning-icon>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-input type="text" name="RegistrationNo" label="Registration No" placeholder="Enter Registration No here.."></lightning-input>
+                        <lightning-input type="date" name="DOB" label="Date of Birth" placeholder="Enter Date of Birth here.."></lightning-input>
+                        <br />
+                        <div class="slds-float_right">
+                            <lightning-button variant="success" label="Sign In" title="Sign In" class="slds-m-left_x-small"></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+        <div class="slds-col slds-size_2-of-12"></div>
+    </div> 
+</template>

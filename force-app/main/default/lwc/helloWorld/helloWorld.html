@@ -1,0 +1,20 @@
+<!--
+  @description       : 
+  @author            : shubhranshu
+  @group             : 
+  @last modified on  : 08-22-2022
+  @last modified by  : shubhranshu
+  Modifications Log 
+  Ver   Date         Author        Modification
+  1.0   07-28-2020   shubhranshu   Initial Version
+-->
+<template>
+    <lightning-card title="HelloWorld" icon-name="custom:custom14">
+        <div class="slds-var-m-around_medium">
+            <p>Hello, {greeting}!</p>
+            <lightning-input label="Name" value={greeting} onchange={changeHandler} onclick={confirmcheck}></lightning-input>
+            <hr />
+            <lightning-button onclick={handlePromptClick} label="Open Prompt Modal"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

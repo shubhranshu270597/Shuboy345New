@@ -1,0 +1,30 @@
+<!--
+  @File Name          : accountData.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 9/21/2019, 5:53:24 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    9/21/2019   shubhranshu     Initial Version
+-->
+<template>
+        <lightning-card >
+                <lightning-layout class="slds-m-around_medium">
+                    <lightning-layout-item>
+                        <template if:true={listIsNotEmpty}>
+                            <template for:each={accounts.data} for:item="account">
+                                <c-account-Item key={account.Id} account={account} onselected={accountSelected}></c-account-Item>
+                            </template>
+                        </template>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-m-left_medium">
+                        <template if:true={selectedAccount}>
+                            <p>{selectedAccount.Name}</p>
+                            <p>{selectedAccount.Industry}</p>
+                        </template>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-card>
+</template>

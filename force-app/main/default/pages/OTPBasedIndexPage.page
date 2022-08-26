@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : shubhranshu
+  @group             : 
+  @last modified on  : 09-24-2020
+  @last modified by  : shubhranshu
+  Modifications Log 
+  Ver   Date         Author        Modification
+  1.0   09-24-2020   shubhranshu   Initial Version
+-->
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false">
+<html lang="en">
+<head>
+    <title>TripPanda Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500" />
+    <apex:stylesheet value="{!URLFOR($Resource.LoginPageCSSandJS,'/LoginPageCSSandJS/bootstrap/css/bootstrap.min.css')}"/>  
+    <apex:stylesheet value="{!URLFOR($Resource.LoginPageCSSandJS,'/LoginPageCSSandJS/font-awesome/css/font-awesome.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.LoginPageCSSandJS,'/LoginPageCSSandJS/css/form-elements.css')}"/>    
+    <apex:stylesheet value="{!URLFOR($Resource.LoginPageCSSandJS,'/LoginPageCSSandJS/css/style.css')}"/>    
+    
+</head>
+<body  style="background-color: #666666;">
+
+</body>
+<apex:includeScript value="{!URLFOR($Resource.LoginPageCSSandJS, 'LoginPageCSSandJS/js/jquery-1.11.1.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.LoginPageCSSandJS, 'LoginPageCSSandJS/bootstrap/js/bootstrap.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.LoginPageCSSandJS, 'LoginPageCSSandJS/js/jquery.backstretch.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.LoginPageCSSandJS, 'LoginPageCSSandJS/js/scripts.js')}"/>
+
+</html>  
+</apex:page>

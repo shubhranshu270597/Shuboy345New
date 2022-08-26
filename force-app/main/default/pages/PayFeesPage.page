@@ -1,0 +1,51 @@
+<apex:page title="Total Pay Fees Print" controller="StudentFeesController" renderAs="pdf" showHeader="false" sidebar="false" standardStylesheets="false">
+    
+       <apex:stylesheet value="{!URLFOR($Resource.StudentPortalCSSandJS,'/assets/css/PayFees.css')}"/>
+    <body style="font-size: 20px;">
+     <center><apex:image url="https://c.ap4.content.force.com/servlet/servlet.ImageServer?id=0156F00000G3bDe&oid=00D6F0000029WDI&lastMod=1540711680000"  height="100" width="150" ></apex:image></center>
+    <h1><center>Name: <span>{!sf.Lead__r.FirstName}  {!sf.Lead__r.LastName}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Program : {!sf.Progams__c} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="Date: {0,date,dd-MM-yyyy}" style="float:right; margin-right:50px;">
+              <apex:param value="{!TODAY()}" />
+          </apex:outputText></center></h1>  
+          <br /><br /><br />
+    <table>
+      <tr>
+        <th>Sr No.</th>
+        <th>Item</th> 
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Library Fees</td>
+        <td>{!sf.Library_Fees__c}</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Tution Fees </td>
+        <td>{!sf.Tution_Fees__c}</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Computer Practical Fees </td>
+        <td>{!sf.Computer_Practical_Fees__c}</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Uni Sport &amp; Cultural Activity</td>
+        <td>{!sf.Uni_Sport_Cultural_Activity__c}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>TOTAL</td>
+        <td>{!sf.Total_Fees__c}</td>
+      </tr>
+      
+       
+    </table>
+    <p>Receipt is valid subject to realization of candiadte.</p>
+        <br />
+         <div style="float:right; margin-left:50px;">
+           <p>Secretary / Chairman/Treasurer</p>
+         </div>  
+    </body>
+    
+</apex:page>

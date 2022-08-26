@@ -1,0 +1,27 @@
+<!--
+  @File Name          : opportunityDynamic.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 9/21/2019, 4:18:18 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    9/20/2019   shubhranshu     Initial Version
+-->
+<template>
+        <div class="slds-m-vertical_medium">
+            <h1 class="slds-text-heading_small">Slide to change opportunity amount</h1>
+            <lightning-slider label="Amount Limit" max ="100000" min = "1000" step="100" value={amount} onchange={handleChange}></lightning-slider>
+        </div>
+   <lightning-card>
+       <ul>
+           <template for:each={opportunities.data} for:item="opp">
+                <lightning-layout-item key={opp.key}>
+                    <p>Name: <lightning-formatted-text value={opp.Name}></lightning-formatted-text></p>
+                    <p>{oppAmt}: <lightning-formatted-number value={opp.Amount}></lightning-formatted-number></p>
+                </lightning-layout-item>
+           </template>
+       </ul>
+   </lightning-card>
+</template>

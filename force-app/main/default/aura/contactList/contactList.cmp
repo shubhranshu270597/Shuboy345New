@@ -1,0 +1,22 @@
+<!--
+  @Component Name     : contactList.cmp
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 07-07-2020
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    25/8/2019, 1:27:35 AM   shubhranshu     Initial Version
+-->
+<aura:component>
+    <aura:attribute name="greeting" type="String" default="lightning component"></aura:attribute>
+    {!v.greeting}
+    <c:accountCrudOperation ></c:accountCrudOperation>
+    <!-- <c:paginator onnext="{!c.handleNext}" onprevious="{!c.handlePrevious}"> </c:paginator> -->
+    <c:findDuplicateAccount></c:findDuplicateAccount>
+
+    <c:lwcStreamingApi></c:lwcStreamingApi>
+</aura:component>

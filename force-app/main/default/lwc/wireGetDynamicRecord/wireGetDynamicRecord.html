@@ -1,0 +1,24 @@
+<!--
+  @File Name          : wireGetDynamicRecord.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 9/27/2019, 5:24:32 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    9/27/2019   shubhranshu     Initial Version
+-->
+<template>
+  <lightning-card>
+      <lightning-layout>
+          <lightning-layout-item if:true={studFee}>
+              data: -{program}
+          </lightning-layout-item>
+          <lightning-layout-item if:true={studFeeError}>
+              error: -{studFeeError}
+          </lightning-layout-item>
+          <!-- <lightning-button onclick={showProgram} label="click me to show the program" variant="success"></lightning-button> -->
+      </lightning-layout>
+  </lightning-card>
+</template>

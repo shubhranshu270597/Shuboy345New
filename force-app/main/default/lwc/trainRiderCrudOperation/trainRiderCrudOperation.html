@@ -1,0 +1,28 @@
+<!--
+  @Component Name     : trainRiderCrudOperation.html
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 8/16/2019, 5:50:50 PM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/16/2019, 5:48:30 PM   shubhranshu     Initial Version
+-->
+<template>
+    <lightning-card title="TrainRider Flows" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+                <p>TrainRdier, {trName}!</p>
+            <lightning-input label="Name" value={trName} onchange={handleChange}>
+            </lightning-input>
+            
+            <lightning-button variant="brand" label="Save" title="Save" icon-name="utility:save" onclick={saveAccountRec} class="slds-m-left_medium">
+            </lightning-button>
+            
+            <lightning-button variant="brand" label="Delete" title="Delete" icon-name="utility:delete" onclick={deleteAccount} class="slds-m-left_medium">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

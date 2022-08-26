@@ -1,0 +1,58 @@
+<!--
+  @File Name          : TripPandaForPratiTiruPatiDarshan.page
+  @Description        : 
+  @Author             : shubhranshu
+  @Group              : 
+  @Last Modified By   : shubhranshu
+  @Last Modified On   : 9/3/2020, 1:59:27 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    9/3/2020   shubhranshu     Initial Version
+-->
+<apex:page lightningStylesheets="true" standardStylesheets="false" showHeader="false" sidebar="false" applyBodyTag="false"
+    applyHtmlTag="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <apex:includeLightning />
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Trip Panda</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+
+    <body style="background-image: url(https://4.bp.blogspot.com/-JfMfE1tU7Rk/UdGj4c-Lt3I/AAAAAAAABcc/VSrJ6LjHdsE/s600/Prati-balaji-9.JPG); background-position: center;background-repeat: no-repeat;background-size: cover;height: 100%">
+        <div id="lightning" />
+        <script>
+            function getQueryParameters() {
+                let params = {};
+                let search = location.search.substring(1);
+                if (search) {
+                    params = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g, '":"') + '"}', (key, value) => {
+                        return key === "" ? value : decodeURIComponent(value)
+                    });
+                }
+                return params;
+            }
+
+            var params = getQueryParameters();
+            console.log('params '+JSON.stringify(params));
+            
+            $Lightning.use("c:tripPandaApp", function () {
+                $Lightning.createComponent("c:tripPandaComp", { "parameters": params },
+                    "lightning",
+                    function (cmp) {
+                        console.log('component created successfully ...');
+                    });
+            });
+
+            // To render the Page Url
+            history.pushState(null, null, 'PratiBalajiDarshan');
+            window.addEventListener('popstate', function () {
+                history.pushState(null, null, 'PratiBalajiDarshan');
+            });
+        </script>
+    </body>
+
+    </html>
+</apex:page>
